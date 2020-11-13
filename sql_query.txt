@@ -1,0 +1,47 @@
+Create Database
+CREATE DATABASE Testing
+
+Create Table
+CREATE TABLE testing_user (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(100) NOT NULL,
+    user_email VARCHAR(100) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+Insert Data
+INSERT INTO testing_user(id,user_name,user_email) VALUES (1, 'user1', 'user1@gmail.com')
+
+Change Column name
+ALTER TABLE `testing_user` CHANGE `date` `created_date` TIMESTAMP 
+
+Add Column
+ALTER TABLE `testing_user` ADD COLUMN testing_column char(10)
+
+Delete Column
+ALTER TABLE `testing_user` DROP COLUMN testing_column 
+
+Rename Table Name
+RENAME TABLE `testing_user` To `testing`
+
+Drop Table
+DROP TABLE `testing`
+
+Select Data
+SELECT * FROM `testing` WHERE id = 1
+SELECT * FROM `testing` WHERE id IN (1,2)
+SELECT * FROM `testing` WHERE id NOT IN (1,2)
+
+SELECT COUNT(*) FROM `testing`
+SELECT DISTINCT user_name FROM `testing` 
+SELECT MIN(id) FROM `testing`
+SELECT MAX(id) FROM `testing`
+SELECT SUM(id) FROM `testing`
+SELECT AVG(id) FROM `testing`
+
+SELECT * FROM `testing` LIMIT 2
+SELECT * FROM `testing` LIMIT 4,2 // 2 id start from id4
+SELECT * FROM `testing` ORDER BY id DESC
+SELECT * FROM `testing` ORDER BY id ASC
+SELECT * FROM `testing` LIKE '%user%'
+
